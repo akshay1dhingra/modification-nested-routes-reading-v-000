@@ -4109,3 +4109,25 @@ Processing by AuthorsController#show as HTML
   [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?  [["author_id", 4]]
   Rendered authors/show.html.erb within layouts/application (1.0ms)
 Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/authors/4/posts/20/edit" for 208.185.170.2 at 2018-12-21 17:13:37 +0000
+Cannot render console from 208.185.170.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#edit as HTML
+  Parameters: {"author_id"=>"4", "id"=>"20"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 20]]
+  Rendered posts/_form.html.erb (1.1ms)
+  Rendered posts/edit.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/posts/20" for 208.185.170.2 at 2018-12-21 17:13:40 +0000
+Cannot render console from 208.185.170.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sWLnQhrN7JwkbBobdiQmN5mqkkWsEBbrVPxbZ3NEhjjjPEstix5GeI4jkWvn2+SrAczqO1RO7E3fA2nS9uD75g==", "post"=>{"author_id"=>"4", "title"=>"Third Post", "description"=>"three"}, "commit"=>"Update Post", "id"=>"20"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 20]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "posts" SET "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["description", "three"], ["updated_at", "2018-12-21 17:13:40.455292"], ["id", 20]]
+  [1m[36m (3.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://174.138.35.103:46547/posts/20
+Completed 302 Found in 8ms (ActiveRecord: 4.3ms)

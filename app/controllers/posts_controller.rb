@@ -39,7 +39,7 @@ class PostsController < ApplicationController
         
       else 
       
-    end
+      end
     else 
       @post = Post.find(params[:id])
     end
